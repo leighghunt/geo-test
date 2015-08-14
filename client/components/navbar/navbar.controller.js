@@ -5,6 +5,10 @@ angular.module('geoTestApp')
     $scope.menu = [{
       'title': 'Home',
       'link': '/'
+    },
+    {
+      'title': 'Geo Thing',
+      'link': '/geothing'
     }];
 
     $scope.isCollapsed = true;

@@ -1,0 +1,23 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="col-md-12">
+	This is the geothing view.
+  <div class="col-lg-12">
+      <h1 class="page-header">Geo things:</h1>
+      <ul class="nav nav-tabs nav-stacked col-md-6 col-lg-3 col-sm-12" ng-repeat="geothing in geothings | limitTo:50">
+      	      		<li><a ng-href="/geothing/{{geothing._id}}">{{geothing.name}}<button type="button" class="close" ng-click="deleteGeothing(geothing)">&times;</button></a></li>
+      </ul>
+    </div>
+  </div>
+
+  <form class="geothing-form">
+	  <p class="input-group">
+	    <input type="text" class="form-control" placeholder="Add a new geothing here." ng-model="newGeothing">
+	    <span class="input-group-btn">
+	      <button type="submit" class="btn btn-primary" ng-click="addGeothing()">Add New</button>
+	    </span>
+	  </p>
+  </form>
+
+  <div ui-view> </div>
+</div>
